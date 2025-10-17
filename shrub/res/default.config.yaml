@@ -1,0 +1,26 @@
+app:
+  down: false
+debug: true
+env:
+  APP_ENV: 'DEV'
+views:
+  engine: 'blade'
+  pages: '%project_root%/pages'
+  templates: '%project_root%/templates'
+  cache: '%project_root%/var/cache'
+assets:
+  dir: '%project_root%/assets'
+  build: '/build'
+mailer:
+  smtp:
+    host: 'localhost'
+    port: 25
+    user: null
+    password: null
+    security: null
+    debug: 0
+log:
+  enabled: true
+  level: 'info'
+  dir: '%project_root%/var/logs'
+  file: 'app.log'
