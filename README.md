@@ -105,8 +105,6 @@ A _.env_ file can also be read for the Env variable. To do this, the ``load_env(
 I will be adding a few more features in the future.
 If you have any ideas, please let me know.
 
-Mail: develop@timworx.de
-
 Planned features:
 
 - Twig template engine implementation
