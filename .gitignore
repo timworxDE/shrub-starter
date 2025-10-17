@@ -1,4 +1,9 @@
-/.idea
+/.idea/
+/todo.txt
+
+# Migraw is a custom development environment
+/.migraw/
+/migraw.yml
 
 /.env.local
 /.env.local.php
