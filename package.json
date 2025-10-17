@@ -1,0 +1,14 @@
+{
+    "name": "shrub",
+    "version": "1.0.0",
+    "type": "module",
+    "dependencies": {
+        "@leafphp/vite-plugin": "^0.2.1",
+        "vite": "^7.1.5"
+    },
+    "scripts": {
+        "build": "vite build"
+    },
+    "author": "TimworxDE",
+    "license": "ISC"
+}
