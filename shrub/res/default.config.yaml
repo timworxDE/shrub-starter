@@ -4,7 +4,7 @@ debug: true
 env:
   APP_ENV: 'DEV'
 views:
-  engine: 'blade'
+  engine: 'twig'
   pages: '%project_root%/pages'
   templates: '%project_root%/templates'
   cache: '%project_root%/var/cache'

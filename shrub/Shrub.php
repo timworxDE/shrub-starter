@@ -1,10 +1,9 @@
 <?php
 
 namespace Shrub;
+
 use Leaf\App;
 use Leaf\Config;
-use Leaf\Http\Response;
-use Leaf\Log;
 use Symfony\Component\Yaml\Yaml;
 
 class Shrub extends App
@@ -39,9 +38,25 @@ class Shrub extends App
             return $this;
         });
 
+        // Setup BareUI
         Config::set('views.path', Config::get('views.pages'));
         Config::set('views.cachePath', Config::get('views.cache'));
 
+        // todo: check config which template engione is used
+        // Setup Twig
+        parent::attachView(\Leaf\Twig::class, 'twig');
+        parent::twig()->configure(
+            [
+                Config::get('views.pages'),
+                Config::get('views.templates'),
+            ],
+            [
+                'cache' => Config::get('views.cache'),
+                'debug' => Config::get('debug'),
+            ]
+        );
+
+        // Setup Blade
         parent::attachView(\Leaf\Blade::class);
         parent::blade()->configure([
             'views' => [
@@ -51,6 +66,7 @@ class Shrub extends App
             'cache' => Config::get('views.cache')
         ]);
 
+        // Setup Vite
         \Leaf\Vite::config([
             'assets' => Config::get('assets.build'),
         ]);
@@ -137,10 +153,5 @@ class Shrub extends App
             'bare' => '.view.php',
             default => '.html'
         };
-    }
-
-    public function twig(string $view, array $params = []): string
-    {
-        dd($view, $params);
     }
 }

@@ -1,10 +1,10 @@
 app:
   down: false
-debug: false
+debug: true
 env:
   APP_ENV: 'DEVELOP'
 views:
-  engine: 'blade'
+  engine: 'twig'
   pages: '%project_root%/pages'
   templates: '%project_root%/templates'
   cache: '%project_root%/var/cache'

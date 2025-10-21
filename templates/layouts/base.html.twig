@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>SHRUB 🌿 {% block title %}{% endblock %}</title>
+    {{ vite(['styles/app.css', 'scripts/app.js'], 'assets') }}
+</head>
+<body>
+    {% block header %}
+        {% include 'partials/header.html.twig' %}
+    {% endblock %}
+
+    {% block main %}
+        <main class="container">
+            {% block content %}{% endblock %}
+        </main>
+    {% endblock %}
+
+    {% block footer %}
+        {% include 'partials/footer.html.twig' %}
+    {% endblock %}
+</body>
+</html>
